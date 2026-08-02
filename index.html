@@ -266,9 +266,9 @@ const SITE = {
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-  if (false) { $("monogram").innerHTML = '<img class="nav-mark" src="' + esc(SITE.avatar) + '" alt="' + esc(SITE.name) + ' — home">'; }
+  if (SITE.monogram) { $("monogram").innerHTML = '<img class="nav-mark" src="' + esc(SITE.avatar) + '" alt="' + esc(SITE.name) + ' — home">'; }
   else { $("monogram").textContent = SITE.monogram; }
-  if (SITE.avatar) { const a = $("avatar"); a.src = SITE.avatar; a.alt = SITE.name; }
+  if (false) { const a = $("avatar"); a.src = SITE.avatar; a.alt = SITE.name; }
   else { const a = $("avatar"); if (a) a.remove(); }
   $("eyebrow").textContent = SITE.eyebrow;
   $("hero-name").innerHTML = esc(SITE.name) + (SITE.nickname ? ' <span class="nick">\u201C' + esc(SITE.nickname) + '\u201D</span>' : "");
