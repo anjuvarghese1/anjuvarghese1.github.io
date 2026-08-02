@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anju Varghese — AI / ML Engineer</title>
+<link rel="icon" type="image/jpeg" href="avatar.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FBFAF7;
+    --ink: #1A1A17;
+    --slate: #6B6B63;
+    --hair: #E5E3DB;
+    --verified: #2F5D4F;
+    --verified-soft: #ECF1EE;
+    --maxw: 720px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .mono {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate);
+  }
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 26px 0; border-bottom: 1px solid var(--hair);
+  }
+  .monogram {
+    font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.18em; color: var(--ink); text-decoration: none;
+    display: inline-flex; align-items: center;
+  }
+  .nav-mark {
+    width: 34px; height: 34px; border-radius: 50%; object-fit: cover;
+    display: block; border: 1px solid var(--hair); transition: box-shadow 0.18s ease;
+  }
+  .monogram:hover .nav-mark, .monogram:focus-visible .nav-mark { box-shadow: 0 0 0 3px var(--verified-soft); }
+  .topnav { display: flex; gap: 22px; }
+  .topnav a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+    color: var(--slate); text-decoration: none; transition: color 0.18s ease;
+  }
+  .topnav a:hover, .topnav a:focus-visible { color: var(--ink); }
+  .hero { padding: 92px 0 80px; }
+  .eyebrow { display: block; margin-bottom: 26px; }
+  .avatar {
+    width: 76px; height: 76px; border-radius: 50%; object-fit: cover;
+    display: block; margin-bottom: 30px; border: 1px solid var(--hair);
+    box-shadow: 0 2px 14px rgba(26,26,23,0.08);
+  }
+  .hero h1 {
+    font-family: 'Spectral', serif; font-weight: 400;
+    font-size: clamp(2.5rem, 7vw, 3.7rem); line-height: 1.04;
+    letter-spacing: -0.015em; margin-bottom: 28px;
+  }
+  .hero h1 .nick { font-style: italic; font-weight: 300; color: var(--slate); }
+  .lede { font-size: 1.16rem; max-width: 30em; margin-bottom: 22px; }
+  .hero p.sub { color: var(--slate); max-width: 34em; font-size: 1rem; }
+  section.block { padding: 18px 0 64px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 14px;
+    padding-bottom: 28px; border-top: 1px solid var(--hair); padding-top: 30px;
+  }
+  .section-head .idx { color: var(--ink); }
+  .record {
+    display: block; text-decoration: none; color: inherit; padding: 26px 0;
+    border-bottom: 1px solid var(--hair); position: relative; transition: padding-left 0.22s ease;
+  }
+  .record:first-of-type { border-top: 1px solid var(--hair); }
+  .record::before {
+    content: ""; position: absolute; left: -28px; top: 26px; bottom: 26px;
+    width: 2px; background: var(--verified); opacity: 0; transition: opacity 0.22s ease;
+  }
+  .record:hover, .record:focus-visible { padding-left: 14px; outline: none; }
+  .record:hover::before, .record:focus-visible::before { opacity: 1; }
+  .rec-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .rec-num { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--slate); letter-spacing: 0.04em; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--hair);
+    color: var(--slate); border-radius: 2px;
+  }
+  .tag.shipped { color: var(--verified); background: var(--verified-soft); border-color: transparent; }
+  .record h3 {
+    font-family: 'Spectral', serif; font-weight: 500; font-size: 1.4rem;
+    letter-spacing: -0.01em; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 9px;
+  }
+  .record h3 .arrow {
+    font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--slate);
+    transition: transform 0.22s ease, color 0.22s ease;
+  }
+  .record:hover h3 .arrow { transform: translate(3px, -3px); color: var(--verified); }
+  .record p { color: var(--slate); max-width: 38em; margin-bottom: 12px; font-size: 0.98rem; }
+  .stack { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.02em; color: var(--ink); opacity: 0.55; }
+  .prose p { max-width: 40em; margin-bottom: 18px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 3px; }
+  .prose a:hover { text-decoration-color: var(--verified); }
+  .creds { display: flex; flex-wrap: wrap; gap: 10px 8px; margin-top: 26px; }
+  .cred {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.04em;
+    padding: 5px 11px; border: 1px solid var(--hair); border-radius: 2px; color: var(--ink);
+  }
+  footer {
+    border-top: 1px solid var(--hair); padding: 40px 0 60px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px;
+  }
+  footer .links { display: flex; gap: 20px; }
+  footer a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em;
+    color: var(--slate); text-decoration: none;
+  }
+  footer a:hover { color: var(--ink); }
+  footer .stamp { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--slate); letter-spacing: 0.06em; }
+  .fade { opacity: 0; transform: translateY(12px); animation: rise 0.7s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+  .fade.d1 { animation-delay: 0.05s; }
+  .fade.d2 { animation-delay: 0.13s; }
+  .fade.d3 { animation-delay: 0.21s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+    .record, .record h3 .arrow { transition: none; }
+  }
+  @media (max-width: 560px) {
+    .avatar { width: 64px; height: 64px; margin-bottom: 24px; }
+    .hero { padding: 64px 0 56px; }
+    .topnav { gap: 16px; }
+    .record::before { display: none; }
+    .record:hover, .record:focus-visible { padding-left: 0; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar fade">
+      <a class="monogram" href="#top" id="monogram">A·V</a>
+      <nav class="topnav" id="topnav"></nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <img class="avatar fade d1" id="avatar" alt="" />
+        <span class="mono eyebrow fade d1" id="eyebrow"></span>
+        <h1 class="fade d1" id="hero-name"></h1>
+        <p class="lede fade d2" id="lede"></p>
+        <p class="sub fade d3" id="subhead"></p>
+      </section>
+      <section class="block">
+        <div class="section-head">
+          <span class="mono idx">01</span>
+          <span class="mono">Selected Work</span>
+        </div>
+        <div id="work"></div>
+      </section>
+      <section class="block prose">
+        <div class="section-head">
+          <span class="mono idx">02</span>
+          <span class="mono">Background</span>
+        </div>
+        <div id="background"></div>
+        <div class="creds" id="creds"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="links" id="footer-links"></div>
+      <span class="stamp" id="footer-stamp"></span>
+    </footer>
+  </div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   EDIT YOUR SITE HERE — this block is the only thing you touch.
+   Change text, swap links, add/remove projects. Nothing below the
+   "STOP EDITING" line needs to change. To add a project, copy one
+   { ... } item in `projects`, paste it, and edit the fields.
+   Keep the quotes and the commas.
+   ══════════════════════════════════════════════════════════════════ */
+const SITE = {
+
+  monogram: "A·V",                      // small mark, top-left
+  avatar: "avatar.jpg",                 // hero photo — "" to hide. Upload this file next to index.html.
+  eyebrow: "AI / ML Engineer",
+  name: "Anju Varghese",
+  nickname: "",                      // shown in italics; set to "" to hide
+  lede: "Designing, training, and deploying end-to-end ML systems — transformer and generative architectures, RAG and agentic pipelines, and predictive models packaged and tested for production.",
+  subhead: "An M.Eng. Artificial Intelligence candidate with a unique foundation spanning enterprise software development, finance (certified FRM), and advanced machine learning.",
+
+  // Links — defined ONCE, used in the top nav and footer.
+  links: {
+    github: "https://github.com/anjuvarghese1",
+    linkedin: "https://www.linkedin.com/in/anju-varghese-",
+    email: "anju.av.varghese@gmail.com"
+  },
+
+  // Projects. First one shows as the flagship (green "shipped" tag).
+  // status: "shipped"  -> green verified tag
+  // status: "wip"      -> plain outline tag
+  projects: [
+    {
+      num: "001",
+      status: "shipped",
+      statusLabel: "Shipped · Live demo",
+      title: "Multi-Agent Retail Credit Underwriting",
+      desc: "A five-agent LangGraph system that orchestrates LLM reasoning alongside deterministic logic, with RAG-grounded steps and full audit logging — every output is traceable, not a black box. Built end to end and deployed with a live demo.",
+      stack: "LangGraph · Chroma · RAG · tool-calling · Gradio / HF Spaces",
+      url: "https://github.com/anjuvarghese1/agentic-multi-agent-retail-credit-underwriting"
+    },
+    {
+      num: "002",
+      status: "wip",
+      statusLabel: "In development",
+      title: "Credit Risk Prediction Pipeline",
+      desc: "An end-to-end risk-prediction model with feature engineering, class-imbalance handling, and calibrated probability output — built for interpretability over leaderboard chasing.",
+      stack: "scikit-learn · XGBoost · pandas",
+      url: "https://github.com/anjuvarghese1"
+    },
+    {
+      num: "003",
+      status: "wip",
+      statusLabel: "In development",
+      title: "SEC 10-K Question Answering",
+      desc: "A retrieval pipeline over Apple's 10-K that pairs semantic search with deterministic arithmetic in Python — section-tagged parsing and structured financial tables, so the numbers are computed, never hallucinated.",
+      stack: "LangChain · FAISS · Python",
+      url: "https://github.com/anjuvarghese1"
+    },
+    {
+      num: "004",
+      status: "wip",
+      statusLabel: "In development",
+      title: "GAN Landscape Colorization",
+      desc: "A solo rebuild comparing DLP-GAN and CycleGAN for colorizing Chinese landscape painting — reconstructed layer by layer to understand the architecture from the ground up rather than inherit it.",
+      stack: "PyTorch · GANs · computer vision",
+      url: "https://github.com/anjuvarghese1"
+    }
+  ],
+
+  // Background section — each string is its own paragraph.
+  background: [
+    "Before AI, I built enterprise software and worked in credit and risk. That path taught me to care about the parts that matter after the demo: evaluation, reliability, and getting systems into production.",
+    "I'm looking for AI/ML engineering roles across the board — LLM and agentic systems, applied machine learning, computer vision, or data-heavy problems."
+  ],
+
+  // Credential pills.
+  creds: [
+    "M.Eng. Artificial Intelligence · U. Cincinnati",
+    "FRM · GARP",
+    "CFA Level I"
+  ],
+
+  footerName: "Anju Varghese",
+  footerYear: "2026"
+};
+/* ═══════════════════════ STOP EDITING BELOW ═══════════════════════ */
+
+(function render() {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  if (SITE.avatar) { $("monogram").innerHTML = '<img class="nav-mark" src="' + esc(SITE.avatar) + '" alt="' + esc(SITE.name) + ' — home">'; }
+  else { $("monogram").textContent = SITE.monogram; }
+  if (SITE.avatar) { const a = $("avatar"); a.src = SITE.avatar; a.alt = SITE.name; }
+  else { const a = $("avatar"); if (a) a.remove(); }
+  $("eyebrow").textContent = SITE.eyebrow;
+  $("hero-name").innerHTML = esc(SITE.name) + (SITE.nickname ? ' <span class="nick">\u201C' + esc(SITE.nickname) + '\u201D</span>' : "");
+  $("lede").textContent = SITE.lede;
+  $("subhead").textContent = SITE.subhead;
+
+  const renderLinks = (emailLabel) => [
+    ['GitHub', SITE.links.github, false],
+    ['LinkedIn', SITE.links.linkedin, false],
+    [emailLabel, 'mailto:' + SITE.links.email, true]
+  ].map(([label, href, isMail]) =>
+    '<a href="' + esc(href) + '"' + (isMail ? '' : ' target="_blank" rel="noopener"') + '>' + esc(label) + '</a>'
+  ).join('');
+  $("topnav").innerHTML = renderLinks('Email');            // nav: compact word
+  $("footer-links").innerHTML = renderLinks(SITE.links.email); // footer: full address, clickable
+
+  $("work").innerHTML = SITE.projects.map(p =>
+    '<a class="record" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
+      '<div class="rec-meta">' +
+        '<span class="rec-num">' + esc(p.num) + '</span>' +
+        '<span class="tag ' + (p.status === 'shipped' ? 'shipped' : '') + '">' + esc(p.statusLabel) + '</span>' +
+      '</div>' +
+      '<h3>' + esc(p.title) + ' <span class="arrow">\u2197</span></h3>' +
+      '<p>' + esc(p.desc) + '</p>' +
+      '<span class="stack">' + esc(p.stack) + '</span>' +
+    '</a>'
+  ).join('');
+
+  const mail = '<a href="mailto:' + esc(SITE.links.email) + '">talk</a>';
+  $("background").innerHTML = SITE.background.map(t =>
+    '<p>' + esc(t).replace('{EMAIL_LINK}', mail) + '</p>'
+  ).join('');
+
+  $("creds").innerHTML = SITE.creds.map(c => '<span class="cred">' + esc(c) + '</span>').join('');
+  $("footer-stamp").textContent = '\u00A9 ' + SITE.footerYear + ' ' + SITE.footerName;
+})();
+</script>
+</body>
+</html>
