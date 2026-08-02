@@ -266,7 +266,7 @@ const SITE = {
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-  if (SITE.avatar) { $("monogram").innerHTML = '<img class="nav-mark" src="' + esc(SITE.avatar) + '" alt="' + esc(SITE.name) + ' — home">'; }
+  if (false) { $("monogram").innerHTML = '<img class="nav-mark" src="' + esc(SITE.avatar) + '" alt="' + esc(SITE.name) + ' — home">'; }
   else { $("monogram").textContent = SITE.monogram; }
   if (SITE.avatar) { const a = $("avatar"); a.src = SITE.avatar; a.alt = SITE.name; }
   else { const a = $("avatar"); if (a) a.remove(); }
